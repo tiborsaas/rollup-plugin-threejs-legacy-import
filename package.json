@@ -1,6 +1,6 @@
 {
-  "name": "rollup-threejs-legacy-import",
-  "version": "1.0.0",
+  "name": "rollup-plugin-threejs-legacy-import",
+  "version": "1.0.1",
   "description": "A Rollup plugin to transform Three.js legacy files (non ES6 modules) to ES6 modules",
   "main": "src/threejs-legacy-import.js",
   "engines": {
@@ -11,7 +11,10 @@
   },
   "repository": "rollup/rollup-plugin-legacy",
   "keywords": [
-    "rollup"
+    "rollup",
+    "rollup-plugin",
+    "three.js",
+    "transform"
   ],
   "author": "Tibor Szász",
   "license": "MIT",
