@@ -14,27 +14,27 @@ In your Rollup config file, import it and add it to the plugin list:
 import ThreeLegacyImport from './rollup-three-legacy';
 
 export default {
-	entry: './application.js',
-	plugins: [
+    entry: './application.js',
+    plugins: [
     ThreeLegacyImport(),
-		babel({
-			compact: true,
-			presets: [
-				['es2015', {modules: false}]
-			]
-		}),
-		nodeResolve({
-			jsnext: true,
-			main: true
-		}),
-	],
-	targets: [
-		{
-			format: 'es',
-			sourceMap: false,
-			dest: 'build/bundle.js'
-		}
-	]
+        babel({
+            compact: true,
+            presets: [
+                ['es2015', {modules: false}]
+            ]
+        }),
+        nodeResolve({
+            jsnext: true,
+            main: true
+        }),
+    ],
+    targets: [
+        {
+            format: 'es',
+            sourceMap: false,
+            dest: 'build/bundle.js'
+        }
+    ]
 };
 ```
 
