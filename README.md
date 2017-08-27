@@ -46,3 +46,6 @@ Rename your legacy files as `filename.legacy.js`
 
 For example in order to import and transform `OrbitControls.js` rename it to `OrbitControls.legacy.js`
 
+# License
+
+MIT
