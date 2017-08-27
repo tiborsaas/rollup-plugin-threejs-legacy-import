@@ -1,8 +1,7 @@
 let acorn = require("acorn"),
 	path = require("path"),
 	walk = require("estree-walker").walk,
-	MagicString = require("magic-string"),
-	codegen = require("escodegen");
+	MagicString = require("magic-string");
 
 let threeLegacyImport = function(){
 	return {
