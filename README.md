@@ -1,11 +1,13 @@
-# Three.js legacy loader
+# Three.js legacy import (Rollup plugin)
 
 This is a Rollup plugin to transform Three.js legacy files in the examples folder to ES6 modules. This repo exists because Three.js is now mostly operating via ES6 modules, but there are tons of goodies in the [examples folder](https://github.com/mrdoob/three.js/tree/dev/examples/js). 
 
 # Usage
 
 ## Step 1
-Install the plugin via `npm install rollup-plugin-threejs-legacy-importer`
+Install the plugin via NPM:
+
+`npm install rollup-plugin-threejs-legacy-import`
 
 ## Step 2
 In your Rollup config file, import it and add it to the plugin list:
