@@ -18,7 +18,7 @@ import ThreeLegacyImport from './rollup-three-legacy';
 export default {
     entry: './application.js',
     plugins: [
-        ThreeLegacyImport(),
+        ThreeLegacyImport(), // <-- this is the juice, the rest is boilerplate
         babel({
             compact: true,
             presets: [
