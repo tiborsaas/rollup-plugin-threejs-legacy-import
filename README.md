@@ -23,7 +23,7 @@ See example config below.
 In your Rollup config file, import it and add it to the plugin list:
 
 ```javascript
-import ThreeLegacyImport from './rollup-three-legacy';
+import ThreeLegacyImport from 'rollup-plugin-threejs-legacy-import';
 
 const options = {
 	explicitExports: { 
