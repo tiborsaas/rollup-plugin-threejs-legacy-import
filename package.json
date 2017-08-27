@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-threejs-legacy-import",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Rollup plugin to transform Three.js legacy files (non ES6 modules) to ES6 modules",
   "main": "src/threejs-legacy-import.js",
   "engines": {
