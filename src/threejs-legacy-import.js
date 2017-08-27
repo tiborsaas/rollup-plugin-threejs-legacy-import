@@ -3,7 +3,7 @@ let acorn = require("acorn"),
 	walk = require("estree-walker").walk,
 	MagicString = require("magic-string");
 
-let threeLegacyImport = function(){
+let threeLegacyImport = function( options ){
 	return {
 		transform: function( code, filePath ) {
 			const codeString = new MagicString(code);
@@ -37,7 +37,14 @@ let threeLegacyImport = function(){
 				const importList = expressions.join(',');
 				transformedCode = `import{ ${importList} } from 'three';`;
 				transformedCode += codeString.toString();
-				transformedCode += `export { ${fileNameRoot} }`;
+				let exportString = fileNameRoot;
+
+				if( typeof options.explicitExports !== 'undefined' ) {
+					if( Object.keys(options.explicitExports).includes( fileNameRoot ) ) {
+						exportString = options.explicitExports[fileNameRoot].join(',');
+					}
+				}
+				transformedCode += `export { ${exportString} }`;
 			}
 			return {
 				name: 'Three.js legacy import',
