@@ -56,4 +56,4 @@ let threeLegacyImport = function( options ){
 	}
 }
 
-export default threeLegacyImport;
+module.exports = threeLegacyImport;
