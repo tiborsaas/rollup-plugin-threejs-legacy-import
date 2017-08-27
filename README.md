@@ -2,23 +2,24 @@
 
 This is a Rollup plugin to transform Three.js legacy files in the examples folder to ES6 modules. This repo exists because Three.js is mostly refactored to use ES6 modules, but there are tons of goodies in the [examples folder](https://github.com/mrdoob/three.js/tree/dev/examples/js) which still use the ES5 style `THREE` object namespace.
 
-# Usage
+# Installation
 
-## Options
+Install the plugin via NPM:
 
-### explicitExports (optional)
+`npm install rollup-plugin-threejs-legacy-import`
+
+# Options
+
+## explicitExports (optional)
 If the `explicitExports` key is set in the config object, then the exported variable will be overwritten and it will generate the variable names as set in the array. By default it exports the name of the file.
  
 `export { GPUParticleSystem, GPUParticleContainer }`
 
 See example config below.
 
+# Usage
+
 ## Step 1
-Install the plugin via NPM:
-
-`npm install rollup-plugin-threejs-legacy-import`
-
-## Step 2
 In your Rollup config file, import it and add it to the plugin list:
 
 ```javascript
@@ -55,7 +56,7 @@ export default {
 };
 ```
 
-## Step 3
+## Step 2
 
 Rename your legacy files as `filename.legacy.js`
 
