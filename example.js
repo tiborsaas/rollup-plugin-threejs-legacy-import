@@ -1,3 +1,3 @@
 
-import {OrbitControls} from './examples/OrbitControls.legacy';
-console.log(OrbitControls)
+import {ColorConverter} from './examples/ColorConverter.legacy';
+console.log(ColorConverter)
