@@ -4,6 +4,8 @@ let acorn = require("acorn"),
 	MagicString = require("magic-string");
 
 let threeLegacyImport = function( options ){
+	options = Object.assign( {}, options );
+
 	return {
 		transform: function( code, filePath ) {
 			const codeString = new MagicString(code);
