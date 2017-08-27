@@ -13,6 +13,7 @@ let threeLegacyImport = function(){
 
 			if( filePath.indexOf('legacy.js') !== -1 ) {
 				fileModified = true;
+				let firstModuleNameOccurance = true;
 				const fileName = path.basename(filePath);
 				const fileNameRoot = fileName.split('.')[0];
 				const ast = acorn.parse(code, {ecmaVersion: 5, preserveParens: true});
@@ -20,7 +21,12 @@ let threeLegacyImport = function(){
 				walk(ast, {
 					enter: function(node, parent) {
 						if( node.type == 'MemberExpression' && node.object.name == 'THREE' ) {
-							codeString.overwrite(node.start, node.end, node.property.name );
+							let replaceExpression = node.property.name;
+							if ( node.property.name === fileNameRoot && firstModuleNameOccurance ) {
+								firstModuleNameOccurance = false;
+								replaceExpression = `const ${ replaceExpression }`; 
+							}
+							codeString.overwrite(node.start, node.end, replaceExpression );
 
 							if( !expressions.includes(node.property.name) && node.property.name !== fileNameRoot ) {
 								expressions.push(node.property.name);
@@ -34,7 +40,8 @@ let threeLegacyImport = function(){
 				transformedCode += `export { ${fileNameRoot} }`;
 			}
 			return {
-				code: ( fileModified ) ? transformedCode : code
+				name: 'Three.js legacy import',
+				code: ( fileModified ) ? transformedCode : code,
 			}
 		}
 	}
